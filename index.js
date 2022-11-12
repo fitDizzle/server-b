@@ -8,6 +8,6 @@ app.get('/', (req, res) => {
   res.send('Server B');
 });
 
-app.listen(8080, () => {
+app.listen(8082, () => {
   console.log('server B running on port 8080');
 });
