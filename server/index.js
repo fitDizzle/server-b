@@ -18,14 +18,6 @@ app.get('/', (req, res) => {
   res.send(`appid: ' ${appId} home page: says hello!`);
 });
 
-app.get('/attelier-server1', (req, res) => {
-  res.send(`appid: ' ${appId} app1 page: says hello!`);
-});
-
-app.get('/attelier-server2', (req, res) => {
-  res.send(`appid: ' ${appId} app2 page: says hello!`);
-});
-
 app.get('/loaderio-eae136dd98e413d38d172053a20f0383.txt', (req, res) => {
   res.send('loaderio-eae136dd98e413d38d172053a20f0383');
 });
@@ -37,7 +29,7 @@ app.use(cache(3000));
 // // Routes
 app.use(routes);
 
-const PORT = process.env.PORT | 8080;
+const PORT = process.env.PORT | 8082;
 
 app.listen(appId, () => {
   console.log('Server is successfully running on port ' + PORT);
