@@ -7,7 +7,6 @@ const routes = require('./routes');
 const app = express();
 const campusAPI = 'api/fec2/hr-rfc';
 const cache = require('./cache.js');
-const appId = process.env.APP_ID;
 
 // Middleware
 app.use(cors({ origin: '*' }));
@@ -15,7 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
-  res.send(`appid: ' ${appId} home page: says hello!`);
+  res.send('Server B');
 });
 
 app.get('/loaderio-eae136dd98e413d38d172053a20f0383.txt', (req, res) => {
@@ -31,6 +30,6 @@ app.use(routes);
 
 const PORT = process.env.PORT | 8082;
 
-app.listen(appId, () => {
+app.listen(PORT, () => {
   console.log('Server is successfully running on port ' + PORT);
 });
