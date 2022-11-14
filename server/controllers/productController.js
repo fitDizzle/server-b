@@ -1,5 +1,7 @@
 const { MongoClient } = require("mongodb");
-const uri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/';
+var username = encodeURIComponent("super");
+var password = encodeURIComponent("super123");
+const uri = process.env.MONGO_URI || `mongodb://${username}:${password}@54.176.23.12:27017/attelier-product-db`;
 const source = process.env.DATABASE || 'attelier-product-db';
 
 module.exports = {
